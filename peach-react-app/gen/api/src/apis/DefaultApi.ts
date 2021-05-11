@@ -18,9 +18,9 @@ import {
     ErrorResponse,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
-    Event,
-    EventFromJSON,
-    EventToJSON,
+    Results,
+    ResultsFromJSON,
+    ResultsToJSON,
 } from '../models';
 
 export interface EventsRequest {
@@ -35,7 +35,7 @@ export class DefaultApi extends runtime.BaseAPI {
     /**
      * Returns list of city events
      */
-    async eventsRaw(requestParameters: EventsRequest): Promise<runtime.ApiResponse<Array<Event>>> {
+    async eventsRaw(requestParameters: EventsRequest): Promise<runtime.ApiResponse<Array<Results>>> {
         const queryParameters: any = {};
 
         if (requestParameters.date !== undefined) {
@@ -51,13 +51,13 @@ export class DefaultApi extends runtime.BaseAPI {
             query: queryParameters,
         });
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(EventFromJSON));
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(ResultsFromJSON));
     }
 
     /**
      * Returns list of city events
      */
-    async events(requestParameters: EventsRequest): Promise<Array<Event>> {
+    async events(requestParameters: EventsRequest): Promise<Array<Results>> {
         const response = await this.eventsRaw(requestParameters);
         return await response.value();
     }

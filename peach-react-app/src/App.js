@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import EventsTable from "./components/EventsTable.js";
+import ResultsTable from "./components/ResultsTable.js";
 
 import {
   BrowserRouter as Router,
@@ -30,7 +30,7 @@ function App() {
             </li>
 
             <li>
-              <Link to="/weather">Weather on weak</Link>
+              <Link to="/Results">Game results</Link>
             </li>
 
            
@@ -46,10 +46,10 @@ function App() {
                 <Map />
               </Route>
 
-              <Route path="/weather">
-                <h1>Weather</h1>
-                Welcome to the weather list! Click at the button to reload the page!
-                <EventsTable />
+              <Route path="/Results">
+                <h1>Game results</h1>
+                Welcome to the Game results list! Click at the button to reload the page!
+                <ResultsTable/>
               </Route>
 
              
