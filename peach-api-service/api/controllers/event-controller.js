@@ -52,10 +52,46 @@ function getEvents(req, res) {
   // this sends back a JSON response which is a single string
   res.json([{
 
-    "id": "" + faker.random.number(),
+    "date": date,
     "location": faker.address.city(),
-    "image": faker.image.image(),
-    "date": faker.date.future(),
-    // "temperature":faker.random.number() + "°",
+    "name1": ""+ faker.company.companyName(),
+    "name2":""+ faker.company.companyName(),
+    "score1": "" + faker.random.number({'min': 1, 'max' : 30}),
+    "score2": "" + faker.random.number({'min': 1, 'max' : 30}),
+  },
+  {
+
+    "date": date,
+    "location": faker.address.city(),
+    "name1":""+ faker.company.companyName(),
+    "name2": ""+ faker.company.companyName(),
+    "score1": "" + faker.random.number({'min': 1, 'max' : 30}),
+    "score2": "" + faker.random.number({'min': 1, 'max' : 30}),
+  },
+  {
+
+    "date": date,
+    "location": faker.address.city(),
+    "name1":""+ faker.company.companyName(),
+    "name2": ""+ faker.company.companyName(),
+    "score1": "" + faker.random.number({'min': 1, 'max' : 30}),
+    "score2": "" + faker.random.number({'min': 1, 'max' : 30}),
+  },
+  {
+
+    "date": date,
+    "location": faker.address.city(),
+    "name1": ""+ faker.company.companyName(),
+    "name2": ""+ faker.company.companyName(),
+    "score1": "" + faker.random.number({'min': 1, 'max' : 30}),
+    "score2": "" + faker.random.number({'min': 1, 'max' : 30}),
+  },
+  {
+    "date": date,
+    "location": faker.address.city(),
+    "name1": ""+ faker.company.companyName(),
+    "name2": ""+ faker.company.companyName(),
+    "score1": "" + faker.random.number({'min': 1, 'max' : 30}),
+    "score2": "" + faker.random.number({'min': 1, 'max' : 30}),
   }]);
 }
