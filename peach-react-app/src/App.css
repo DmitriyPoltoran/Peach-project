@@ -30,8 +30,17 @@
 
 .ResultsCss {
   margin: 0 auto;
-  width: 900px;
+  text-align: left;
+  width: 1000px;
   margin: 30pх;
+  list-style-type: none;
+}
+.liResults {
+  width: 200px;
+}
+.day {
+  font-size: 20px;
+  margin-top: 100px;
 }
 
 @keyframes App-logo-spin {

@@ -22,18 +22,16 @@ function App() {
           <ul>
 
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/games">Games</Link>
             </li>
 
             <li>
-              <Link to="/map">Map</Link>
+              <Link to="/photo">Photo</Link>
             </li>
 
             <li>
               <Link to="/results">Game results</Link>
             </li>
-
-           
 
           </ul>
         </nav>
@@ -42,13 +40,12 @@ function App() {
           <section>
             <Switch>
 
-              <Route path="/map">
+              <Route path="/photo">
                 <Map />
               </Route>
 
               <Route path="/results">
                 <h1>Game results</h1>
-                Welcome to the Game results list! Click at the button to reload the page!
                 <ResultsTable />
               </Route>
 
