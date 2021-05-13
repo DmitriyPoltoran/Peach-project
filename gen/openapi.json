@@ -8,10 +8,10 @@
     "url" : "http://localhost:10010/api/v1"
   } ],
   "paths" : {
-    "/events" : {
+    "/results" : {
       "get" : {
         "description" : "Returns list of city events",
-        "operationId" : "events",
+        "operationId" : "results",
         "parameters" : [ {
           "name" : "date",
           "in" : "query",
@@ -26,7 +26,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/EventsResponse"
+                  "$ref" : "#/components/schemas/ResultsResponse"
                 }
               }
             }
@@ -43,7 +43,7 @@
           }
         }
       },
-      "x-swagger-router-controller" : "event-controller"
+      "x-swagger-router-controller" : "results-controller"
     },
     "/swagger" : {
       "x-swagger-pipe" : "swagger_raw"
@@ -51,29 +51,32 @@
   },
   "components" : {
     "schemas" : {
-      "EventsResponse" : {
+      "ResultsResponse" : {
         "type" : "array",
         "items" : {
-          "$ref" : "#/components/schemas/Event"
+          "$ref" : "#/components/schemas/Results"
         }
       },
-      "Event" : {
-        "required" : [ "id" ],
+      "Results" : {
+        "required" : [ "date" ],
         "type" : "object",
         "properties" : {
-          "id" : {
-            "type" : "string"
-          },
-          "image" : {
-            "type" : "string"
-          },
           "date" : {
             "type" : "string"
           },
           "location" : {
             "type" : "string"
           },
-          "temperature" : {
+          "name1" : {
+            "type" : "string"
+          },
+          "name2" : {
+            "type" : "string"
+          },
+          "score1" : {
+            "type" : "string"
+          },
+          "score2" : {
             "type" : "string"
           }
         }

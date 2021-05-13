@@ -17,13 +17,13 @@ consumes:
 produces:
   - application/json
 paths:
-  /events:
+  /results:
     # binds a127 app logic to a route
-    x-swagger-router-controller: event-controller
+    x-swagger-router-controller: results-controller
     get:
       description: Returns list of city events
       # used as the method name of the controller
-      operationId: events
+      operationId: results
       parameters:
         - name: date
           in: query
@@ -35,7 +35,7 @@ paths:
           description: Success
           schema:
             # a pointer to a definition
-            $ref: "#/definitions/EventsResponse"
+            $ref: "#/definitions/ResultsResponse"
         # responses may fall through to errors
         default:
           description: Error
@@ -47,31 +47,27 @@ paths:
 # complex objects have schema definitions
 definitions:
 
-  EventsResponse:
+  ResultsResponse:
       type: array
       items:
-        $ref: "#/definitions/Event"
+        $ref: "#/definitions/Results"
   
-  Event:
+  Results:
     required:
-      - id
+      - date
     properties:
-      id:
-        type: string
-      image:
-        type: string
       date:
         type: string       
       location:
         type: string
-      temperature:
+      name1:
         type: string
-
-      
-      
-      
-      
-      
+      name2:
+        type: string
+      score1:
+        type: string
+      score2:
+        type: string
       
   ErrorResponse:
     required:
